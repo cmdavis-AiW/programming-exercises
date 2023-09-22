@@ -5,11 +5,18 @@ If divisible by both 3 and 5, print 'FizzBuzz'.
 #include <iostream>
 #include <string>
 
-int main(){
+class Its_Buzzing_Time{
     int upperLimit;
-    std::cout << "Please input your desired upper limit for the FizzBuzz program as a positive integer: " << "\n";
-    std::cin >> upperLimit;
+    public:
+        Its_Buzzing_Time(int);
+        void fizz_the_buzz();
+};
 
+Its_Buzzing_Time::Its_Buzzing_Time(int uppLim){
+    upperLimit = uppLim;
+}
+
+void Its_Buzzing_Time::fizz_the_buzz(){
     int current = 1;
     while (current < upperLimit+1){
         std::string butWillItFizzBuzz;
@@ -27,5 +34,14 @@ int main(){
         }
         current++;
     }
+}
+
+int main(){
+    int upperLimit;
+    std::cout << "Please input your desired upper limit for the FizzBuzz program as a positive integer: " << "\n";
+    std::cin >> upperLimit;
+    Its_Buzzing_Time fb(upperLimit);
+    fb.fizz_the_buzz();
+    
     return 0;
 }
